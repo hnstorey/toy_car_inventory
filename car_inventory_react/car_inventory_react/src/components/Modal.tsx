@@ -1,6 +1,7 @@
 import EntryForm from "./EntryForm";
 
 interface Props {
+    id?: string[];
     open: boolean;
     onClose: () => void;
 }
@@ -25,8 +26,8 @@ const Modal = ( props: Props ) => {
                             X
                         </p>
                     </div>
-                    <div className="flex flex-col items-center text-center mt-3 p-2">
-                        <EntryForm />
+                    <div className="flex flex-col items-center text-center mt-3 p-2 border-red-600">
+                        <EntryForm id={ props.id } />
                     </div>
                 </div>
         </div>

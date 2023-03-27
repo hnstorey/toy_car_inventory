@@ -5,6 +5,7 @@ export const server_calls = {
         const response = await fetch(`https://yummy-fifth-engine.glitch.me/api/my_cars`,
         {
             method: 'GET',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
@@ -23,6 +24,7 @@ export const server_calls = {
         const response = await fetch(`https://yummy-fifth-engine.glitch.me/api/my_cars`,
         {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
@@ -42,6 +44,7 @@ export const server_calls = {
         const response = await fetch(`https://yummy-fifth-engine.glitch.me/api/my_cars/${id}`,
         {
             method: "POST",
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
@@ -61,6 +64,7 @@ export const server_calls = {
         const response = await fetch(`https://yummy-fifth-engine.glitch.me/api/my_cars/${id}`,
         {
             method: "DELETE",
+            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json',
                 'x-access-token': `Bearer ${token}`,
