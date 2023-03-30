@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useGetData } from "../custom-hooks/FetchData";
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: "ID", width: 90 },
+  { field: 'id', headerName: "ID", width: 90, hideable: true },
   { field: 'make', headerName: "Make", flex: 1 },
   { field: 'model', headerName: "Model", flex: 1 },
   { field: 'color', headerName: "Color", flex: 1 },
@@ -28,10 +28,9 @@ function DataTable() {
         server_calls.delete(selectionModel[0]);
         getData();
         console.log(`Selection Model: ${selectionModel}`)
-        // setTimeout( () => { window.location.reload() }, 5000)
+        setTimeout( () => { window.location.reload() }, 5000)
 
     }
-
 
   return (
     <>

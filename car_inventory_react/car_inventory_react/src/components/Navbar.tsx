@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from './LogInButton';
+import LogoutButton from './LogOutButton';
 
 function Navbar() {
     const [isVisible, setIsVisible] = useState(false)
@@ -11,6 +14,8 @@ function Navbar() {
     const clicked = () => {
         setIsVisible(false)
     }
+
+    const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
     <nav className="flex item-center justify-between flex-wrap bg-red-700 p-6">
@@ -45,6 +50,12 @@ function Navbar() {
                             </Link>
                         </div>
                     </button>
+                    {
+                        !isAuthenticated ?
+                    <LoginButton />
+                    :
+                    <LogoutButton />
+                    }
                     </div>
             </div>
             ) : (
